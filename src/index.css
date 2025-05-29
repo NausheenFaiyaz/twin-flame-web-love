@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,330 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', 'Georgia', serif;
+  }
+}
+
+/* Custom Birthday Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes confettifall {
+  0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes giftOpen {
+  0% { transform: translateY(0) rotateX(0deg); }
+  100% { transform: translateY(-50px) rotateX(-45deg); }
+}
+
+@keyframes ribbonOpen {
+  0% { transform: scaleX(1) scaleY(1); }
+  100% { transform: scaleX(0.1) scaleY(0.1); opacity: 0; }
+}
+
+@keyframes bowBounce {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  100% { transform: translateY(-100px) scale(0.5) rotate(360deg); opacity: 0; }
+}
+
+@keyframes confettiBurst {
+  0% { transform: scale(0) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.5) rotate(180deg); opacity: 1; }
+  100% { transform: scale(0.5) rotate(360deg) translateY(200px); opacity: 0; }
+}
+
+/* Floating hearts animation */
+.floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: floatHeart linear infinite;
+}
+
+.heart-1 {
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+.heart-2 {
+  left: 20%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.heart-3 {
+  left: 30%;
+  animation-duration: 7s;
+  animation-delay: 4s;
+}
+
+.heart-4 {
+  left: 70%;
+  animation-duration: 9s;
+  animation-delay: 1s;
+}
+
+.heart-5 {
+  left: 80%;
+  animation-duration: 11s;
+  animation-delay: 3s;
+}
+
+.heart-6 {
+  left: 90%;
+  animation-duration: 6s;
+  animation-delay: 5s;
+}
+
+/* Confetti animation */
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  animation: confettifall linear infinite;
+}
+
+.confetti-1 {
+  left: 15%;
+  background: #ff69b4;
+  animation-duration: 3s;
+  animation-delay: 0s;
+}
+
+.confetti-2 {
+  left: 25%;
+  background: #9370db;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+.confetti-3 {
+  left: 45%;
+  background: #ffd700;
+  animation-duration: 3.5s;
+  animation-delay: 2s;
+}
+
+.confetti-4 {
+  left: 65%;
+  background: #ff69b4;
+  animation-duration: 4.5s;
+  animation-delay: 0.5s;
+}
+
+.confetti-5 {
+  left: 75%;
+  background: #9370db;
+  animation-duration: 3.2s;
+  animation-delay: 1.5s;
+}
+
+.confetti-6 {
+  left: 85%;
+  background: #ffd700;
+  animation-duration: 4.2s;
+  animation-delay: 2.5s;
+}
+
+/* Interactive card hover effects */
+.interactive-card {
+  transition: all 0.3s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.15);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Cake animation */
+.birthday-cake {
+  animation: float 3s ease-in-out infinite;
+}
+
+.flame {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+/* Gift box animations */
+.gift-opened .gift-lid {
+  animation: giftOpen 1s ease-out forwards;
+}
+
+.gift-opened .ribbon-vertical {
+  animation: ribbonOpen 0.8s ease-out forwards;
+}
+
+.gift-opened .ribbon-horizontal {
+  animation: ribbonOpen 0.8s ease-out forwards;
+}
+
+.gift-opened .bow {
+  animation: bowBounce 1s ease-out forwards;
+}
+
+.lid-open {
+  transform: translateX(-50%) translateY(-80px) rotateX(-45deg) !important;
+}
+
+.ribbon-open-v {
+  transform: translateX(-50%) scaleX(0.1) scaleY(0.1) !important;
+  opacity: 0 !important;
+}
+
+.ribbon-open-h {
+  transform: translateY(-50%) scaleX(0.1) scaleY(0.1) !important;
+  opacity: 0 !important;
+}
+
+.bow-open {
+  transform: translateX(-50%) translateY(-100px) scale(0.5) rotate(360deg) !important;
+  opacity: 0 !important;
+}
+
+/* Party confetti burst */
+.party-confetti {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.confetti-burst {
+  position: absolute;
+  font-size: 2rem;
+  animation: confettiBurst 2s ease-out forwards;
+}
+
+.confetti-burst-1 {
+  top: -20px;
+  left: -20px;
+  animation-delay: 0s;
+}
+
+.confetti-burst-2 {
+  top: -20px;
+  right: -20px;
+  animation-delay: 0.2s;
+}
+
+.confetti-burst-3 {
+  bottom: -20px;
+  left: -20px;
+  animation-delay: 0.4s;
+}
+
+.confetti-burst-4 {
+  bottom: -20px;
+  right: -20px;
+  animation-delay: 0.6s;
+}
+
+.confetti-burst-5 {
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 0.8s;
+}
+
+.confetti-burst-6 {
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 1s;
+}
+
+.confetti-burst-7 {
+  top: 50%;
+  left: -40px;
+  transform: translateY(-50%);
+  animation-delay: 1.2s;
+}
+
+.confetti-burst-8 {
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  animation-delay: 1.4s;
+}
+
+/* Fade in animation for modals */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale in animation for modals */
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
