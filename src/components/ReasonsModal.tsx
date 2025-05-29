@@ -54,7 +54,7 @@ const ReasonsModal: React.FC<ReasonsModalProps> = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
       <div className="bg-white rounded-3xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-scale-in shadow-2xl">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-purple-800 font-serif flex items-center gap-2">
+          <h2 className="text-3xl font-bold text-purple-800 font-handwriting flex items-center gap-2">
             <Heart className="w-8 h-8 text-pink-500" />
             100 Reasons Why I Love You
           </h2>
@@ -74,8 +74,8 @@ const ReasonsModal: React.FC<ReasonsModalProps> = ({ isOpen, onClose }) => {
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="flex items-start gap-2">
-                <span className="text-purple-600 font-bold text-sm">{index + 1}.</span>
-                <p className="text-purple-800 text-sm font-medium">{reason}</p>
+                <span className="text-purple-600 font-bold text-sm font-cute">{index + 1}.</span>
+                <p className="text-purple-800 text-sm font-medium font-cute">{reason}</p>
               </div>
             </div>
           ))}
@@ -83,7 +83,7 @@ const ReasonsModal: React.FC<ReasonsModalProps> = ({ isOpen, onClose }) => {
         
         <div className="text-center mt-8">
           <div className="text-4xl mb-4">💕👯‍♀️💕</div>
-          <p className="text-purple-800 font-serif text-xl italic">
+          <p className="text-purple-800 font-handwriting text-xl italic">
             Happy Birthday to my amazing twin sister!
           </p>
         </div>

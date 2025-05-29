@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Kalam:wght@400;700&family=Caveat:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,47 +38,32 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -98,21 +85,34 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', 'Georgia', serif;
+    font-family: 'Kalam', 'Dancing Script', 'Caveat', cursive;
+  }
+
+  .font-handwriting {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .font-cute {
+    font-family: 'Kalam', cursive;
+  }
+
+  .font-playful {
+    font-family: 'Caveat', cursive;
   }
 }
 
 /* Custom Birthday Animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
 }
 
-@keyframes floatHeart {
-  0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+@keyframes floatElement {
+  0% { transform: translateY(100vh) rotate(0deg) scale(0.8); opacity: 0; }
   10% { opacity: 1; }
+  50% { transform: translateY(50vh) rotate(180deg) scale(1); }
   90% { opacity: 1; }
-  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+  100% { transform: translateY(-100px) rotate(360deg) scale(0.8); opacity: 0; }
 }
 
 @keyframes confettifall {
@@ -152,8 +152,13 @@
   100% { transform: scale(0.5) rotate(360deg) translateY(200px); opacity: 0; }
 }
 
-/* Floating hearts animation */
-.floating-hearts {
+@keyframes cardGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 192, 203, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(255, 192, 203, 0.6), 0 0 60px rgba(147, 112, 219, 0.4); }
+}
+
+/* Floating elements animation with uploaded images */
+.floating-elements {
   position: absolute;
   top: 0;
   left: 0;
@@ -163,45 +168,44 @@
   pointer-events: none;
 }
 
-.heart {
+.floating-item {
   position: absolute;
-  font-size: 1.5rem;
-  animation: floatHeart linear infinite;
+  animation: floatElement linear infinite;
 }
 
-.heart-1 {
+.floating-1 {
   left: 10%;
-  animation-duration: 8s;
+  animation-duration: 12s;
   animation-delay: 0s;
 }
 
-.heart-2 {
-  left: 20%;
-  animation-duration: 10s;
-  animation-delay: 2s;
-}
-
-.heart-3 {
-  left: 30%;
-  animation-duration: 7s;
-  animation-delay: 4s;
-}
-
-.heart-4 {
-  left: 70%;
-  animation-duration: 9s;
-  animation-delay: 1s;
-}
-
-.heart-5 {
-  left: 80%;
-  animation-duration: 11s;
+.floating-2 {
+  left: 25%;
+  animation-duration: 15s;
   animation-delay: 3s;
 }
 
-.heart-6 {
+.floating-3 {
+  left: 45%;
+  animation-duration: 10s;
+  animation-delay: 6s;
+}
+
+.floating-4 {
+  left: 65%;
+  animation-duration: 14s;
+  animation-delay: 2s;
+}
+
+.floating-5 {
+  left: 80%;
+  animation-duration: 11s;
+  animation-delay: 8s;
+}
+
+.floating-6 {
   left: 90%;
-  animation-duration: 6s;
+  animation-duration: 13s;
   animation-delay: 5s;
 }
 
@@ -218,74 +222,101 @@
 
 .confetti-piece {
   position: absolute;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   animation: confettifall linear infinite;
+  border-radius: 50%;
 }
 
 .confetti-1 {
   left: 15%;
-  background: #ff69b4;
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
   animation-duration: 3s;
   animation-delay: 0s;
 }
 
 .confetti-2 {
   left: 25%;
-  background: #9370db;
+  background: linear-gradient(45deg, #9370db, #8a2be2);
   animation-duration: 4s;
   animation-delay: 1s;
 }
 
 .confetti-3 {
   left: 45%;
-  background: #ffd700;
+  background: linear-gradient(45deg, #ffd700, #ffb347);
   animation-duration: 3.5s;
   animation-delay: 2s;
 }
 
 .confetti-4 {
   left: 65%;
-  background: #ff69b4;
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
   animation-duration: 4.5s;
   animation-delay: 0.5s;
 }
 
 .confetti-5 {
   left: 75%;
-  background: #9370db;
+  background: linear-gradient(45deg, #9370db, #8a2be2);
   animation-duration: 3.2s;
   animation-delay: 1.5s;
 }
 
 .confetti-6 {
   left: 85%;
-  background: #ffd700;
+  background: linear-gradient(45deg, #ffd700, #ffb347);
   animation-duration: 4.2s;
   animation-delay: 2.5s;
 }
 
 /* Interactive card hover effects */
 .interactive-card {
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.interactive-card:hover::before {
+  animation: shimmer 1.5s ease-in-out infinite;
+  opacity: 1;
 }
 
 .interactive-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(139, 69, 19, 0.15);
+  transform: translateY(-10px) scale(1.05) rotate(1deg);
+  animation: cardGlow 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
 .hover-scale {
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .hover-scale:hover {
   transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 /* Cake animation */
 .birthday-cake {
-  animation: float 3s ease-in-out infinite;
+  animation: float 4s ease-in-out infinite;
 }
 
 .flame {
@@ -396,32 +427,32 @@
 
 /* Fade in animation for modals */
 .animate-fade-in {
-  animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.5s ease-out;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 /* Scale in animation for modals */
 .animate-scale-in {
-  animation: scaleIn 0.3s ease-out;
+  animation: scaleIn 0.5s ease-out;
 }
 
 @keyframes scaleIn {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.8) rotate(-5deg);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
 }

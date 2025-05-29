@@ -28,7 +28,7 @@ const GiftBox: React.FC<GiftBoxProps> = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
       <div className="bg-white rounded-3xl p-8 max-w-lg w-full animate-scale-in shadow-2xl relative overflow-hidden">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-purple-800 font-serif">🎁 Special Gift</h2>
+          <h2 className="text-3xl font-bold text-purple-800 font-handwriting">🎁 Special Gift</h2>
           <button 
             onClick={onClose}
             className="text-gray-500 hover:text-gray-700 transition-colors"
@@ -43,12 +43,13 @@ const GiftBox: React.FC<GiftBoxProps> = ({ isOpen, onClose }) => {
             onClick={handleGiftClick}
           >
             <div className="gift-container relative">
-              {/* Gift Box Base */}
-              <div className="gift-base w-48 h-32 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg shadow-2xl relative overflow-hidden">
-                {/* Box Pattern */}
-                <div className="absolute inset-0 bg-purple-500 opacity-30">
-                  <div className="w-full h-full bg-gradient-to-br from-transparent via-white/10 to-transparent"></div>
-                </div>
+              {/* Using uploaded gift box image */}
+              <div className="gift-base w-48 h-32 relative overflow-hidden rounded-lg shadow-2xl">
+                <img 
+                  src="/lovable-uploads/b1077ad8-b994-4fac-b997-59fdd6eddb40.png" 
+                  alt="Gift Box" 
+                  className="w-full h-full object-cover"
+                />
                 
                 {/* Vertical Ribbon */}
                 <div className={`ribbon-vertical absolute top-0 left-1/2 transform -translate-x-1/2 w-8 h-full bg-gradient-to-b from-yellow-300 to-yellow-500 transition-all duration-1000 ${isOpened ? 'ribbon-open-v' : ''}`}>
@@ -68,17 +69,17 @@ const GiftBox: React.FC<GiftBoxProps> = ({ isOpen, onClose }) => {
               
               {/* Bow */}
               <div className={`bow absolute -top-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 ${isOpened ? 'bow-open' : ''}`}>
-                <div className="w-12 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full relative">
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-6 bg-yellow-700 rounded-sm"></div>
-                  <div className="absolute -left-2 top-0 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full transform -rotate-45"></div>
-                  <div className="absolute -right-2 top-0 w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full transform rotate-45"></div>
-                </div>
+                <img 
+                  src="/lovable-uploads/8af362af-8288-49b6-b6a9-6a9b131941be.png" 
+                  alt="Bow" 
+                  className="w-12 h-8"
+                />
               </div>
             </div>
           </div>
           
           {!isOpened && (
-            <p className="mt-6 text-purple-800 font-serif text-lg">
+            <p className="mt-6 text-purple-800 font-handwriting text-lg">
               Click the gift box to open it! 🎉
             </p>
           )}
@@ -86,10 +87,10 @@ const GiftBox: React.FC<GiftBoxProps> = ({ isOpen, onClose }) => {
           {isOpened && (
             <div className="mt-6 space-y-4 animate-fade-in">
               <div className="text-4xl animate-bounce">🎉</div>
-              <p className="text-2xl font-bold text-purple-800 font-serif">
+              <p className="text-2xl font-bold text-purple-800 font-handwriting">
                 Surprise!
               </p>
-              <p className="text-lg text-purple-600">
+              <p className="text-lg text-purple-600 font-cute">
                 The greatest gift is having you as my sister! 💕
               </p>
               <div className="text-3xl">👯‍♀️✨🎂✨</div>

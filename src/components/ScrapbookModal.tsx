@@ -14,7 +14,7 @@ const ScrapbookModal: React.FC<ScrapbookModalProps> = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
       <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-scale-in shadow-2xl">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-purple-800 font-serif">📸 Our Scrapbook</h2>
+          <h2 className="text-3xl font-bold text-purple-800 font-handwriting">📸 Our Scrapbook</h2>
           <button 
             onClick={onClose}
             className="text-gray-500 hover:text-gray-700 transition-colors"
@@ -32,8 +32,8 @@ const ScrapbookModal: React.FC<ScrapbookModalProps> = ({ isOpen, onClose }) => {
                 className="w-full h-auto rounded-lg"
               />
               <div className="mt-4 text-pink-600">
-                <p className="font-serif italic text-lg">"Two hearts, one soul"</p>
-                <p className="text-sm text-gray-600 mt-2">Making memories together 💕</p>
+                <p className="font-handwriting italic text-lg">"Two hearts, one soul"</p>
+                <p className="text-sm text-gray-600 mt-2 font-cute">Making memories together 💕</p>
               </div>
             </div>
           </div>
@@ -41,19 +41,19 @@ const ScrapbookModal: React.FC<ScrapbookModalProps> = ({ isOpen, onClose }) => {
           <div className="grid grid-cols-2 gap-4 mt-8">
             <div className="bg-pink-50 p-4 rounded-xl text-center">
               <div className="text-4xl mb-2">👯‍♀️</div>
-              <p className="font-serif text-purple-800">Twin Power</p>
+              <p className="font-handwriting text-purple-800">Twin Power</p>
             </div>
             <div className="bg-yellow-50 p-4 rounded-xl text-center">
               <div className="text-4xl mb-2">💖</div>
-              <p className="font-serif text-purple-800">Sister Love</p>
+              <p className="font-handwriting text-purple-800">Sister Love</p>
             </div>
             <div className="bg-purple-50 p-4 rounded-xl text-center">
               <div className="text-4xl mb-2">🎉</div>
-              <p className="font-serif text-purple-800">Celebrations</p>
+              <p className="font-handwriting text-purple-800">Celebrations</p>
             </div>
             <div className="bg-pink-50 p-4 rounded-xl text-center">
               <div className="text-4xl mb-2">🌟</div>
-              <p className="font-serif text-purple-800">Memories</p>
+              <p className="font-handwriting text-purple-800">Memories</p>
             </div>
           </div>
         </div>
