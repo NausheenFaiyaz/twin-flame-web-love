@@ -14,7 +14,7 @@ const LetterModal: React.FC<LetterModalProps> = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
       <div className="bg-white rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto animate-scale-in shadow-2xl">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold text-purple-800 font-handwriting flex items-center gap-2">
+          <h2 className="text-3xl font-bold text-purple-800 font-caveat flex items-center gap-2">
             💌 Dear Sister...
           </h2>
           <button 
@@ -27,11 +27,11 @@ const LetterModal: React.FC<LetterModalProps> = ({ isOpen, onClose }) => {
         
         <div className="bg-gradient-to-br from-pink-50 to-purple-50 p-6 rounded-2xl border-4 border-pink-200">
           <div className="font-cute text-purple-800 leading-relaxed space-y-4">
-            <div className="text-right text-pink-600 italic mb-4 font-handwriting">
+            <div className="text-right text-pink-600 italic mb-4 font-caveat">
               On your special day... 🎂
             </div>
             
-            <p className="text-lg font-handwriting">
+            <p className="text-lg font-caveat">
               My dearest twin sister,
             </p>
             
@@ -65,7 +65,7 @@ const LetterModal: React.FC<LetterModalProps> = ({ isOpen, onClose }) => {
               sister anyone could ask for.
             </p>
             
-            <p className="text-lg font-medium font-handwriting">
+            <p className="text-lg font-medium font-caveat">
               Happy Birthday, my amazing twin! Here's to another year of being fabulous together! 🎉✨
             </p>
             
@@ -73,10 +73,10 @@ const LetterModal: React.FC<LetterModalProps> = ({ isOpen, onClose }) => {
               <div className="flex justify-center items-center gap-2 text-2xl">
                 💕 👯‍♀️ 💕
               </div>
-              <p className="italic text-pink-600 mt-2 font-handwriting">
+              <p className="italic text-pink-600 mt-2 font-caveat">
                 With all my love and birthday wishes,
               </p>
-              <p className="font-bold text-purple-700 mt-2 font-handwriting">
+              <p className="font-bold text-purple-700 mt-2 font-caveat">
                 Your twin sister ✨
               </p>
             </div>
