@@ -13,7 +13,7 @@ const BirthdayCard = () => {
   const [showGiftBox, setShowGiftBox] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-200 via-purple-100 to-yellow-100 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-300 to-pink-300 relative overflow-hidden">
       {/* Heart Background Pattern for Cards */}
       <div 
         className="absolute inset-0 opacity-10 pointer-events-none"
@@ -108,8 +108,8 @@ const BirthdayCard = () => {
               <h3 className="text-2xl font-bold text-pink-800 mb-4 font-caveat">SCRAPBOOK</h3>
               <div className="w-32 h-32 mx-auto bg-gray-200 rounded-lg border-4 border-white shadow-md overflow-hidden">
                 <img 
-                  src="/lovable-uploads/57fda633-c36f-4143-bdff-d534a3e58c40.png" 
-                  alt="Twin Sisters" 
+                  src="/lovable-uploads/3f5b0c0f-6a40-4483-9591-f15730c1c479.png" 
+                  alt="Twin Sisters Illustrated" 
                   className="w-full h-full object-cover"
                 />
               </div>
