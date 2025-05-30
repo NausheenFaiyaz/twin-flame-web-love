@@ -68,21 +68,6 @@ const ScrapbookModal: React.FC<ScrapbookModalProps> = ({ isOpen, onClose }) => {
               </div>
             </div>
           </div>
-
-          {/* Original photo */}
-          <div className="text-center">
-            <div className="w-full max-w-md mx-auto bg-white p-4 rounded-2xl shadow-lg border-4 border-pink-200">
-              <img 
-                src="/lovable-uploads/0fdfa07b-a924-49a8-ace5-23e9b15e2d0a.png" 
-                alt="Twin Sisters Making Heart" 
-                className="w-full h-auto rounded-lg"
-              />
-              <div className="mt-4 text-pink-600">
-                <p className="font-caveat italic text-lg">"Heart hands, heart connection"</p>
-                <p className="text-sm text-gray-600 mt-2 font-cute">Forever together 💕</p>
-              </div>
-            </div>
-          </div>
           
           <div className="grid grid-cols-2 gap-4 mt-8">
             <div className="bg-pink-50 p-4 rounded-xl text-center">

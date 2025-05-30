@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Gift, Heart, Camera, Mail } from 'lucide-react';
 import ScrapbookModal from './ScrapbookModal';
@@ -13,7 +12,7 @@ const BirthdayCard = () => {
   const [showGiftBox, setShowGiftBox] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-400 via-purple-300 to-pink-300 relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundColor: '#ff8fab' }}>
       {/* Heart Background Pattern for Cards */}
       <div 
         className="absolute inset-0 opacity-10 pointer-events-none"
